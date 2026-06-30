@@ -16,57 +16,65 @@ export function Tickets() {
       </div>
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {TIERS.map((tier) => (
-          <div
-            key={tier.name}
-            className={`flex flex-col rounded-3xl border p-7 ${
-              tier.featured
-                ? "border-neon-pink bg-card shadow-lg shadow-neon-pink/10"
-                : "border-border bg-card/60"
-            }`}
-          >
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="font-display text-3xl tracking-wide text-foreground">{tier.name}</h3>
-              {tier.featured && (
-                <span className="rounded-full bg-brand-gradient px-2.5 py-1 text-[10px] font-medium uppercase tracking-widest text-primary-foreground">
-                  Популярный
+        {TIERS.map((tier) => {
+          const isVip = tier.name === "VIP"
+          const isSquad = tier.name === "Squad 3+1"
+          const buttonLabel = isSquad ? "Купить Squad" : tier.cta
+
+          return (
+            <div
+              key={tier.name}
+              className={`flex flex-col relative rounded-3xl border p-7 transition-all duration-300 hover:scale-[1.02] ${
+                isVip
+                  ? "border-neon-pink bg-card/85 shadow-lg shadow-neon-pink/15 z-10"
+                  : "border-border bg-card/60 backdrop-blur-md"
+              }`}
+            >
+              {/* Floating top badge for VIP */}
+              {isVip && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-gradient px-4 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground shadow-md animate-pulse whitespace-nowrap">
+                  Осталось менее 30
                 </span>
               )}
+
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="font-display text-3xl tracking-wide text-foreground">{tier.name}</h3>
+                {isVip && (
+                  <span className="rounded-md border border-neon-pink bg-neon-pink/10 px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-widest text-neon-pink">
+                    VIP
+                  </span>
+                )}
+              </div>
+
+              <div className="mt-3 flex items-baseline gap-2">
+                <span className="font-display text-4xl text-brand-gradient">{tier.price}</span>
+              </div>
+
+              {/* Perks list */}
+              <ul className="mt-6 flex flex-1 flex-col gap-3">
+                {tier.perks.map((perk) => (
+                  <li key={perk} className="flex items-start gap-2 text-sm text-muted-foreground/95">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-neon-pink" aria-hidden="true" />
+                    {perk}
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                render={
+                  <a href={TICKET_URL} target="_blank" rel="noopener noreferrer">
+                    {buttonLabel}
+                  </a>
+                }
+                className={`mt-7 w-full rounded-full font-semibold uppercase tracking-widest text-xs h-11 ${
+                  isVip
+                    ? "cta-glow bg-brand-gradient text-primary-foreground hover:opacity-95"
+                    : "bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                }`}
+              />
             </div>
-
-            <div className="mt-3 flex items-baseline gap-2">
-              <span className="font-display text-4xl text-brand-gradient">{tier.price}</span>
-            </div>
-
-            {tier.badge && (
-              <span className="mt-3 self-start rounded-full border border-neon-coral/60 px-3 py-1 text-[11px] font-medium uppercase tracking-widest text-neon-coral">
-                {tier.badge}
-              </span>
-            )}
-
-            <ul className="mt-6 flex flex-1 flex-col gap-3">
-              {tier.perks.map((perk) => (
-                <li key={perk} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-neon-pink" aria-hidden="true" />
-                  {perk}
-                </li>
-              ))}
-            </ul>
-
-            <Button
-              render={
-                <a href={TICKET_URL} target="_blank" rel="noopener noreferrer">
-                  {tier.cta}
-                </a>
-              }
-              className={`mt-7 w-full rounded-full font-medium uppercase tracking-wider ${
-                tier.featured
-                  ? "cta-glow bg-brand-gradient text-primary-foreground hover:opacity-90"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-              }`}
-            />
-          </div>
-        ))}
+          )
+        })}
       </div>
     </section>
   )

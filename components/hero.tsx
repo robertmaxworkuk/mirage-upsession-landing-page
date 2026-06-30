@@ -9,7 +9,7 @@ export function Hero() {
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5 pb-16 pt-28 text-center sm:px-8">
       <Image
         src="/hero-bg.png"
-        alt=""
+        alt="Атмосферный пляжный фон вечеринки Mirage UpSession с подсветкой"
         fill
         priority
         loading="eager"
@@ -37,15 +37,23 @@ export function Hero() {
           {EVENT.description}
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-foreground">
-          <span className="inline-flex items-center gap-2">
-            <CalendarDays className="h-4 w-4 text-neon-pink" aria-hidden="true" />
-            {EVENT.dayLabel}, {EVENT.timeLabel}
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-neon-pink" aria-hidden="true" />
-            {EVENT.venueName} · {EVENT.city}
-          </span>
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <div className="rounded-2xl border border-neon-pink/20 bg-card/45 backdrop-blur-md px-8 py-3.5 shadow-lg shadow-neon-pink/5 hover:border-neon-pink/40 transition-all duration-300">
+            <p className="font-display text-5xl tracking-widest text-brand-gradient sm:text-6xl md:text-7xl uppercase">
+              9 июля
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium tracking-wider uppercase text-foreground/90">
+            <span className="inline-flex items-center gap-2">
+              <CalendarDays className="h-4 w-4 text-neon-pink" aria-hidden="true" />
+              22:00 – 04:00
+            </span>
+            <span className="h-1.5 w-1.5 rounded-full bg-neon-pink/30 hidden sm:inline" />
+            <span className="inline-flex items-center gap-2">
+              <MapPin className="h-4 w-4 text-neon-pink" aria-hidden="true" />
+              GONCHAR · Москва
+            </span>
+          </div>
         </div>
 
         <div className="mt-12 w-full">

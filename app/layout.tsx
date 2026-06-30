@@ -22,19 +22,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/mirage-logo.png',
+        type: 'image/png',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/mirage-logo.png',
   },
 }
 
@@ -53,7 +45,8 @@ export default function RootLayout({
       lang="ru"
       className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} bg-background`}
     >
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased relative min-h-screen">
+        <div className="pointer-events-none fixed inset-0 z-50 bg-grain" />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

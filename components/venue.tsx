@@ -41,11 +41,34 @@ export function Venue() {
         ))}
       </div>
 
-      <div className="mt-8 flex items-center gap-3 rounded-2xl border border-border bg-card/60 px-6 py-5">
-        <MapPin className="h-5 w-5 shrink-0 text-neon-pink" aria-hidden="true" />
-        <div>
-          <p className="text-sm font-medium text-foreground">{EVENT.venueName}</p>
-          <p className="text-sm text-muted-foreground">{EVENT.address}</p>
+      <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-1 flex flex-col justify-between rounded-2xl border border-border bg-card/60 p-6 backdrop-blur-md">
+          <div>
+            <h3 className="font-display text-2xl tracking-wide text-foreground">Как нас найти</h3>
+            <p className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground/90">
+              Легендарный клуб GONCHAR — это двухуровневый лофт с барной зоной, сценой и просторной летней верандой. Камерная атмосфера, мощный звук и пространство, созданное для танцев до утра. Находится всего в 5 минутах пешком от метро Тульская.
+            </p>
+          </div>
+          
+          <div className="mt-8 flex items-start gap-3 rounded-xl border border-white/5 bg-card/45 p-4">
+            <MapPin className="h-5 w-5 shrink-0 text-neon-pink mt-0.5 animate-bounce" aria-hidden="true" />
+            <div>
+              <p className="text-sm font-bold text-foreground">{EVENT.venueName}</p>
+              <p className="text-sm text-muted-foreground">{EVENT.address}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="lg:col-span-2 overflow-hidden rounded-2xl border border-border bg-card/60 h-[350px] relative">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?ll=37.622638%2C55.708848&z=16&pt=37.622638%2C55.708848%2Cpm2rdm"
+            width="100%"
+            height="100%"
+            style={{ border: 0, filter: "invert(0.9) hue-rotate(180deg) brightness(0.9) contrast(1.1)" }}
+            allowFullScreen
+            loading="lazy"
+            title="Yandex Map"
+          />
         </div>
       </div>
     </section>

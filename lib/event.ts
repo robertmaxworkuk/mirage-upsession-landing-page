@@ -23,13 +23,15 @@ export const EVENT = {
 export type Artist = {
   name: string
   initials: string
+  role: string
+  image: string
 }
 
 export const LINEUP: Artist[] = [
-  { name: "Remoz", initials: "RM" },
-  { name: "Morpheu", initials: "MP" },
-  { name: "SUVsum", initials: "SV" },
-  { name: "Dan Rich", initials: "DR" },
+  { name: "Remoz", initials: "RM", role: "DJ Set", image: "/artist_remoz.png" },
+  { name: "Morpheu", initials: "MP", role: "DJ Set", image: "/artist_morpheu.png" },
+  { name: "SUVsum", initials: "SV", role: "DJ Set", image: "/artist_suvsum.png" },
+  { name: "Dan Rich", initials: "DR", role: "Special Guest", image: "/artist_dan_rich.png" },
 ]
 
 export type Tier = {
@@ -82,7 +84,7 @@ export type InsideItem = { title: string; desc: string }
 
 export const INSIDE: InsideItem[] = [
   { title: "Open-air веранда", desc: "Летняя терраса под открытым небом" },
-  { title: "Лофт с MC", desc: "Мировые хиты и драйвовый ведущий" },
+  { title: "Лофт: мировые хиты и ведущий", desc: "Мировые хиты и драйвовый ведущий" },
   { title: "Авторский бар", desc: "Коктейли от наших барменов" },
   { title: "DJ sets", desc: "Remoz, Morpheu, SUVsum, Dan Rich" },
   { title: "Интерактивные зоны", desc: "Фото-споты и активности" },
