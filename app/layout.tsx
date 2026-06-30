@@ -15,9 +15,9 @@ const bebasNeue = Bebas_Neue({
 })
 
 export const metadata: Metadata = {
-  title: 'MIRAGE — Tomorrow Starts Tonight',
+  title: 'Mirage UpSession — Escape the Matrix',
   description:
-    'MIRAGE — закрытая вечеринка в лофте. Лучшие диджеи, премиальная атмосфера и одна ночь, которую вы не забудете. 11 июля 2026, Москва.',
+    'Mirage UpSession — пляжно-дискотечная вечеринка для студентов в честь окончания сессии. 9 июля 2026, клуб GONCHAR, Москва. Авторский бар, летняя веранда, лофт с MC и мировыми хитами.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#1a0d10',
+  themeColor: '#1c0a16',
 }
 
 export default function RootLayout({
