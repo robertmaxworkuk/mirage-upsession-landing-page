@@ -17,7 +17,7 @@ const bebasNeue = Bebas_Neue({
 export const metadata: Metadata = {
   title: 'Mirage UpSession — Escape the Matrix',
   description:
-    'Mirage UpSession — пляжно-дискотечная вечеринка для студентов в честь окончания сессии. 9 июля 2026, клуб GONCHAR, Москва. Авторский бар, летняя веранда, лофт с MC и мировыми хитами.',
+    'Mirage UpSession — пляжно-дискотечная вечеринка для студентов в честь окончания сессии. 9 июля 2026, клуб GONCHAR, Москва. Авторский бар, летняя веранда, лофт с диджеями и мировыми хитами.',
   generator: 'v0.app',
   icons: {
     icon: [
