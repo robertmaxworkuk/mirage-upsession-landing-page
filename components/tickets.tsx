@@ -38,7 +38,7 @@ export function Tickets() {
 
               {/* Floating top badge for VIP */}
               {isVip && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-gradient px-4 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground shadow-md animate-pulse whitespace-nowrap z-20">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-gradient px-4 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground shadow-md whitespace-nowrap z-20">
                   Осталось менее 30
                 </span>
               )}
