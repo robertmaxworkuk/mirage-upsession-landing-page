@@ -73,17 +73,6 @@ function getIcon(index: number) {
 export function Inside() {
   return (
     <section id="about" className="relative scroll-mt-24 px-5 py-24 sm:px-8">
-      {/* Background themed image with scale animation */}
-      <div className="absolute inset-0 -z-30 overflow-hidden pointer-events-none opacity-[0.07] min-h-full w-full">
-        <Image
-          src="/party_bg_1.png"
-          alt="Пляжная дискотека Mirage UpSession в лучах заката"
-          fill
-          sizes="100vw"
-          className="object-cover animate-scale-slow"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-      </div>
 
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">

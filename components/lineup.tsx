@@ -13,7 +13,7 @@ export function Lineup() {
           sizes="100vw"
           className="object-cover animate-scale-slow"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/45 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       </div>
 
       {/* Decorative ambient background blur */}

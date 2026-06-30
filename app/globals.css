@@ -58,7 +58,7 @@
 
 :root {
   color-scheme: dark;
-  --background: oklch(0.17 0.07 350);
+  --background: oklch(0.12 0.02 330);
   --foreground: oklch(0.95 0.02 70);
   --card: oklch(0.22 0.08 348);
   --card-foreground: oklch(0.95 0.02 70);
@@ -291,5 +291,52 @@
     100% {
       background-position: 50% 0%;
     }
+  }
+
+  @keyframes wave-move-1 {
+    0% {
+      transform: translateX(0px) translateY(0px) scaleY(1);
+    }
+    50% {
+      transform: translateX(-25px) translateY(-4px) scaleY(1.05);
+    }
+    100% {
+      transform: translateX(0px) translateY(0px) scaleY(1);
+    }
+  }
+
+  @keyframes wave-move-2 {
+    0% {
+      transform: translateX(0px) translateY(0px) scaleY(1);
+    }
+    50% {
+      transform: translateX(25px) translateY(4px) scaleY(0.95);
+    }
+    100% {
+      transform: translateX(0px) translateY(0px) scaleY(1);
+    }
+  }
+
+  .animate-neon-wave-1 {
+    animation: wave-move-1 12s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .animate-neon-wave-2 {
+    animation: wave-move-2 15s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  @keyframes sway {
+    0%, 100% {
+      transform: rotate(0deg) skewX(0deg);
+    }
+    50% {
+      transform: rotate(2deg) skewX(1deg);
+    }
+  }
+
+  .animate-sway {
+    animation: sway 8s ease-in-out infinite;
   }
 }

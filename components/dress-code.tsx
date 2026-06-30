@@ -1,21 +1,8 @@
-import Image from "next/image"
-
 const IDEAS = ["White party", "Linen", "Tropical details", "Summer luxury"]
 
 export function DressCode() {
   return (
     <section className="relative scroll-mt-24 border-y border-border/40 bg-transparent py-24 overflow-hidden">
-      {/* Background themed image with scale animation */}
-      <div className="absolute inset-0 -z-30 overflow-hidden pointer-events-none opacity-[0.22] min-h-full w-full">
-        <Image
-          src="/gonchar-bar.png"
-          alt="Авторский бар клуба GONCHAR"
-          fill
-          sizes="100vw"
-          className="object-cover animate-scale-slow"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/45 to-background" />
-      </div>
 
       <div className="mx-auto max-w-3xl px-5 text-center sm:px-8 relative z-10">
         <p className="text-xs uppercase tracking-[0.3em] text-neon-pink">Dress code</p>

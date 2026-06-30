@@ -18,7 +18,7 @@ export function Hero() {
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/60 to-background"
+        className="absolute inset-0 bg-gradient-to-b from-transparent via-background/45 to-background to-90%"
       />
 
       <div className="relative z-10 flex max-w-3xl flex-col items-center">
