@@ -10,7 +10,20 @@ const GALLERY = [
 
 export function Venue() {
   return (
-    <section id="venue" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8">
+    <section id="venue" className="relative scroll-mt-24 px-5 py-24 sm:px-8 overflow-hidden">
+      {/* Background themed image with scale animation */}
+      <div className="absolute inset-0 -z-30 overflow-hidden pointer-events-none opacity-[0.22] min-h-full w-full">
+        <Image
+          src="/venue-terrace.png"
+          alt="Летняя терраса лофта GONCHAR"
+          fill
+          sizes="100vw"
+          className="object-cover animate-scale-slow"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/45 to-background" />
+      </div>
+
+      <div className="mx-auto max-w-6xl relative z-10">
       <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-neon-pink">Площадка</p>
@@ -70,6 +83,7 @@ export function Venue() {
             title="Yandex Map"
           />
         </div>
+      </div>
       </div>
     </section>
   )

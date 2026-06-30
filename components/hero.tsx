@@ -6,7 +6,7 @@ import { EVENT, EVENT_DATE, TICKET_URL } from "@/lib/event"
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5 pb-16 pt-28 text-center sm:px-8">
+    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5 pb-10 pt-22 text-center sm:px-8">
       <Image
         src="/hero-bg.png"
         alt="Атмосферный пляжный фон вечеринки Mirage UpSession с подсветкой"
@@ -14,56 +14,51 @@ export function Hero() {
         priority
         loading="eager"
         sizes="100vw"
-        className="object-cover opacity-40"
+        className="object-cover opacity-45 animate-scale-slow"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/65 to-background"
+        className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/60 to-background"
       />
 
       <div className="relative z-10 flex max-w-3xl flex-col items-center">
-        <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-border glass px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-foreground">
+        <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-border glass px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-foreground">
           {EVENT.city} · {EVENT.dateLabel}
         </span>
 
-        <h1 className="font-display text-6xl leading-[0.92] tracking-tight text-balance text-brand-gradient sm:text-8xl md:text-9xl">
+        <h1 className="font-display text-5xl leading-[0.92] tracking-tight text-balance text-brand-gradient sm:text-7xl md:text-8xl">
           Mirage UpSession
         </h1>
-        <p className="mt-4 font-display text-2xl uppercase tracking-[0.3em] text-cool-gradient sm:text-3xl">
+        <p className="mt-3 font-display text-xl uppercase tracking-[0.3em] text-cool-gradient sm:text-2xl">
           {EVENT.tagline}
         </p>
 
-        <p className="mt-6 max-w-xl text-pretty leading-relaxed text-muted-foreground">
+        <p className="mt-4 max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground/90 sm:text-base">
           {EVENT.description}
         </p>
 
-        <div className="mt-10 flex flex-col items-center gap-4">
-          <div className="rounded-2xl border border-neon-pink/20 bg-card/45 backdrop-blur-md px-8 py-3.5 shadow-lg shadow-neon-pink/5 hover:border-neon-pink/40 transition-all duration-300">
-            <p className="font-display text-5xl tracking-widest text-brand-gradient sm:text-6xl md:text-7xl uppercase">
-              9 июля
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium tracking-wider uppercase text-foreground/90">
-            <span className="inline-flex items-center gap-2">
-              <CalendarDays className="h-4 w-4 text-neon-pink" aria-hidden="true" />
-              22:00 – 04:00
+        <div className="mt-6 flex flex-col items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold tracking-wider uppercase text-foreground/90">
+            <span className="inline-flex items-center gap-2 text-neon-pink">
+              <CalendarDays className="h-4 w-4" aria-hidden="true" />
+              9 июля, {EVENT.timeLabel}
             </span>
             <span className="h-1.5 w-1.5 rounded-full bg-neon-pink/30 hidden sm:inline" />
             <span className="inline-flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-neon-pink" aria-hidden="true" />
-              GONCHAR · Москва
+              <MapPin className="h-4 w-4" aria-hidden="true" />
+              {EVENT.venueName} · {EVENT.city}
             </span>
           </div>
         </div>
 
-        <div className="mt-12 w-full">
-          <p className="mb-5 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+        <div className="mt-8 w-full max-w-md">
+          <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-muted-foreground/80 font-semibold">
             До начала вечеринки
           </p>
           <Countdown target={EVENT_DATE} />
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button
             render={
               <a href={TICKET_URL} target="_blank" rel="noopener noreferrer">

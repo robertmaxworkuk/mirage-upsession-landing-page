@@ -4,8 +4,20 @@ import { LINEUP } from "@/lib/event"
 export function Lineup() {
   return (
     <section id="lineup" className="relative scroll-mt-24 border-y border-border/40 bg-card/15 py-24 overflow-hidden">
+      {/* Background themed image with scale animation */}
+      <div className="absolute inset-0 -z-30 overflow-hidden pointer-events-none opacity-[0.25] min-h-full w-full">
+        <Image
+          src="/venue-crowd.png"
+          alt="Танцпол клуба GONCHAR"
+          fill
+          sizes="100vw"
+          className="object-cover animate-scale-slow"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/45 to-background" />
+      </div>
+
       {/* Decorative ambient background blur */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-72 rounded-full bg-neon-pink/5 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-72 rounded-full bg-neon-pink/10 blur-[100px] pointer-events-none" />
 
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="mb-16 text-center">

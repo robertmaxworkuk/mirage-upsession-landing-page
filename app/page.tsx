@@ -16,15 +16,15 @@ export default function Page() {
       <SiteHeader />
       <main className="relative overflow-hidden bg-background">
         {/* Animated neon floating blobs */}
-        <div className="absolute top-[5%] left-[-15%] -z-10 h-[600px] w-[600px] rounded-full bg-neon-pink/8 blur-[120px] pointer-events-none animate-float-slow" />
-        <div className="absolute top-[22%] right-[-15%] -z-10 h-[700px] w-[700px] rounded-full bg-neon-orange/6 blur-[150px] pointer-events-none animate-float-reverse" />
-        <div className="absolute top-[45%] left-[-10%] -z-10 h-[650px] w-[650px] rounded-full bg-neon-magenta/8 blur-[130px] pointer-events-none animate-float-slow" />
-        <div className="absolute top-[68%] right-[-15%] -z-10 h-[750px] w-[750px] rounded-full bg-neon-cyan/6 blur-[160px] pointer-events-none animate-float-reverse" />
-        <div className="absolute top-[85%] left-[-15%] -z-10 h-[700px] w-[700px] rounded-full bg-neon-pink/8 blur-[140px] pointer-events-none animate-float-slow" />
+        <div className="absolute top-[5%] left-[-15%] -z-10 h-[650px] w-[650px] rounded-full bg-neon-pink/20 blur-[130px] pointer-events-none animate-float-slow" />
+        <div className="absolute top-[22%] right-[-15%] -z-10 h-[750px] w-[750px] rounded-full bg-neon-orange/14 blur-[160px] pointer-events-none animate-float-reverse" />
+        <div className="absolute top-[45%] left-[-10%] -z-10 h-[700px] w-[700px] rounded-full bg-neon-magenta/20 blur-[140px] pointer-events-none animate-float-slow" />
+        <div className="absolute top-[68%] right-[-15%] -z-10 h-[800px] w-[800px] rounded-full bg-neon-cyan/16 blur-[170px] pointer-events-none animate-float-reverse" />
+        <div className="absolute top-[85%] left-[-15%] -z-10 h-[750px] w-[750px] rounded-full bg-neon-pink/20 blur-[150px] pointer-events-none animate-float-slow" />
 
         {/* Subtle matrix grid and dot patterns for depth */}
-        <div className="absolute inset-0 -z-20 bg-matrix-grid pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_90%)] opacity-85" />
-        <div className="absolute inset-0 -z-20 bg-dot-matrix pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_95%)] opacity-60" />
+        <div className="absolute inset-0 -z-20 bg-matrix-grid pointer-events-none opacity-95" />
+        <div className="absolute inset-0 -z-20 bg-dot-matrix pointer-events-none opacity-80" />
 
         {/* Floating background palm tree silhouette vector elements */}
         <div className="absolute top-[14%] left-[1%] -z-10 opacity-[0.025] text-foreground pointer-events-none hidden lg:block">
