@@ -30,7 +30,7 @@ export function FinalCta() {
             </a>
           }
           size="lg"
-          className="cta-glow mt-10 rounded-full bg-brand-gradient px-10 font-medium uppercase tracking-wider text-primary-foreground hover:opacity-90"
+          className="cta-glow mt-10 rounded-full bg-brand-gradient px-10 font-medium uppercase tracking-wider text-primary-foreground hover:opacity-90 cta-pulse"
         />
         <p className="mt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground/80 font-medium">
           Билеты от 1700 ₽

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { INSIDE } from "@/lib/event"
 
 function getIcon(index: number) {
@@ -71,37 +72,51 @@ function getIcon(index: number) {
 
 export function Inside() {
   return (
-    <section id="about" className="relative mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8">
-      <div className="mb-12 text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-neon-pink">Что будет внутри</p>
-        <h2 className="mt-3 font-display text-5xl tracking-tight text-foreground sm:text-6xl">
-          Лето начинается здесь
-        </h2>
+    <section id="about" className="relative scroll-mt-24 px-5 py-24 sm:px-8">
+      {/* Background themed image with scale animation */}
+      <div className="absolute inset-0 -z-30 overflow-hidden pointer-events-none opacity-[0.07] min-h-full w-full">
+        <Image
+          src="/party_bg_1.png"
+          alt="Пляжная дискотека Mirage UpSession в лучах заката"
+          fill
+          sizes="100vw"
+          className="object-cover animate-scale-slow"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {INSIDE.map((item, i) => (
-          <article
-            key={item.title}
-            className="group relative flex flex-col justify-between min-h-[220px] overflow-hidden rounded-3xl border border-white/10 bg-card/30 backdrop-blur-md p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-neon-pink/40 hover:bg-card/45 hover:shadow-[0_0_35px_rgba(236,72,153,0.12)]"
-          >
-            {/* Absolute accent lighting on hover */}
-            <div className="absolute -right-16 -top-16 -z-10 h-32 w-32 rounded-full bg-neon-pink/5 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
-            
-            <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
-              {getIcon(i)}
-            </div>
-            
-            <div>
-              <h3 className="font-display text-2xl tracking-wide text-foreground group-hover:text-neon-coral transition-colors duration-300">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground/90">
-                {item.desc}
-              </p>
-            </div>
-          </article>
-        ))}
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-12 text-center">
+          <p className="text-xs uppercase tracking-[0.3em] text-neon-pink">Что будет внутри</p>
+          <h2 className="mt-3 font-display text-5xl tracking-tight text-foreground sm:text-6xl">
+            Лето начинается здесь
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {INSIDE.map((item, i) => (
+            <article
+              key={item.title}
+              className="group relative flex flex-col justify-between min-h-[220px] overflow-hidden rounded-3xl border border-white/10 bg-card/30 backdrop-blur-md p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-neon-pink/40 hover:bg-card/45 hover:shadow-[0_0_35px_rgba(236,72,153,0.12)] shimmer-sweep"
+            >
+              {/* Absolute accent lighting on hover */}
+              <div className="absolute -right-16 -top-16 -z-10 h-32 w-32 rounded-full bg-neon-pink/5 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+              
+              <div className="mb-6 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                {getIcon(i)}
+              </div>
+              
+              <div>
+                <h3 className="font-display text-2xl tracking-wide text-foreground group-hover:text-neon-coral transition-colors duration-300">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground/90">
+                  {item.desc}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

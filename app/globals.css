@@ -204,4 +204,69 @@
     background-size: 32px 32px;
     background-image: radial-gradient(rgba(34, 211, 238, 0.035) 1.5px, transparent 1.5px);
   }
+
+  @keyframes scale-slow {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+  }
+
+  .animate-scale-slow {
+    animation: scale-slow 35s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 200%;
+    }
+  }
+
+  .shimmer-sweep {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-sweep::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+  }
+
+  .shimmer-sweep:hover::after {
+    animation: shimmer 1.2s ease-in-out;
+  }
+
+  @keyframes neon-pulse {
+    0%, 100% {
+      box-shadow:
+        0 0 15px -3px var(--neon-pink),
+        0 0 30px -10px var(--neon-coral);
+    }
+    50% {
+      box-shadow:
+        0 0 25px 2px var(--neon-pink),
+        0 0 45px -3px var(--neon-coral);
+    }
+  }
+
+  .cta-pulse {
+    animation: neon-pulse 2.5s infinite ease-in-out;
+  }
 }

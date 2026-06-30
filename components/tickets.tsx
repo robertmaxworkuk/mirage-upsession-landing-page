@@ -1,21 +1,35 @@
+import Image from "next/image"
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { TIERS, TICKET_URL } from "@/lib/event"
 
 export function Tickets() {
   return (
-    <section id="tickets" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8">
-      <div className="mb-12 text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-neon-pink">Билеты</p>
-        <h2 className="mt-3 font-display text-5xl tracking-tight text-foreground sm:text-6xl">
-          Выбери свой вход
-        </h2>
-        <p className="mx-auto mt-4 max-w-md text-pretty leading-relaxed text-muted-foreground">
-          Скидка действует до воскресенья включительно. Дальше — стандартная стоимость.
-        </p>
+    <section id="tickets" className="relative scroll-mt-24 px-5 py-24 sm:px-8 overflow-hidden">
+      {/* Background themed image with scale animation */}
+      <div className="absolute inset-0 -z-30 overflow-hidden pointer-events-none opacity-[0.06] min-h-full w-full">
+        <Image
+          src="/party_bg_2.png"
+          alt="Пляжная неоновая вечеринка Mirage UpSession в тропиках"
+          fill
+          sizes="100vw"
+          className="object-cover animate-scale-slow"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-6xl relative z-10">
+        <div className="mb-12 text-center">
+          <p className="text-xs uppercase tracking-[0.3em] text-neon-pink">Билеты</p>
+          <h2 className="mt-3 font-display text-5xl tracking-tight text-foreground sm:text-6xl">
+            Выбери свой вход
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-pretty leading-relaxed text-muted-foreground">
+            Скидка действует до воскресенья включительно. Дальше — стандартная стоимость.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {TIERS.map((tier) => {
           const isVip = tier.name === "VIP"
           const isSquad = tier.name === "Squad 3+1"
@@ -24,7 +38,7 @@ export function Tickets() {
           return (
             <div
               key={tier.name}
-              className={`flex flex-col relative rounded-3xl border p-7 transition-all duration-300 hover:scale-[1.02] ${
+              className={`flex flex-col relative rounded-3xl border p-7 transition-all duration-300 hover:scale-[1.02] shimmer-sweep ${
                 isVip
                   ? "border-neon-pink bg-card/85 shadow-lg shadow-neon-pink/15 z-10"
                   : "border-border bg-card/60 backdrop-blur-md"
@@ -68,13 +82,14 @@ export function Tickets() {
                 }
                 className={`mt-7 w-full rounded-full font-semibold uppercase tracking-widest text-xs h-11 ${
                   isVip
-                    ? "cta-glow bg-brand-gradient text-primary-foreground hover:opacity-95"
+                    ? "cta-glow bg-brand-gradient text-primary-foreground hover:opacity-95 cta-pulse"
                     : "bg-secondary text-secondary-foreground hover:bg-secondary/90"
                 }`}
               />
             </div>
           )
         })}
+        </div>
       </div>
     </section>
   )
