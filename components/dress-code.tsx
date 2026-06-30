@@ -4,7 +4,7 @@ const IDEAS = ["White party", "Linen", "Tropical details", "Summer luxury"]
 
 export function DressCode() {
   return (
-    <section className="relative scroll-mt-24 border-y border-border/40 bg-card/15 py-24 overflow-hidden">
+    <section className="relative scroll-mt-24 border-y border-border/40 bg-transparent py-24 overflow-hidden">
       {/* Background themed image with scale animation */}
       <div className="absolute inset-0 -z-30 overflow-hidden pointer-events-none opacity-[0.22] min-h-full w-full">
         <Image

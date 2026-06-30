@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <>
       <SiteHeader />
-      <main className="relative overflow-hidden bg-background">
+      <main className="relative overflow-hidden bg-animated-mesh">
         {/* Animated neon floating blobs */}
         <div className="absolute top-[5%] left-[-15%] -z-10 h-[650px] w-[650px] rounded-full bg-neon-pink/20 blur-[130px] pointer-events-none animate-float-slow" />
         <div className="absolute top-[22%] right-[-15%] -z-10 h-[750px] w-[750px] rounded-full bg-neon-orange/14 blur-[160px] pointer-events-none animate-float-reverse" />
