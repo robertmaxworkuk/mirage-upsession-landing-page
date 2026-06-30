@@ -3,24 +3,24 @@ import { MapPin } from "lucide-react"
 import { EVENT } from "@/lib/event"
 
 const GALLERY = [
-  { src: "/venue-terrace.png", alt: "Терраса лофта с тёплым освещением", span: "md:col-span-2 md:row-span-2" },
-  { src: "/venue-hall.png", alt: "Главный зал лофта", span: "" },
-  { src: "/venue-bar.png", alt: "Барная стойка с премиальными напитками", span: "" },
+  { src: "/gonchar-veranda.png", alt: "Летняя веранда клуба GONCHAR", span: "md:col-span-2 md:row-span-2" },
+  { src: "/gonchar-loft.png", alt: "Лофт со сценой и DJ-буфетом", span: "" },
+  { src: "/gonchar-bar.png", alt: "Авторский бар с коктейлями", span: "" },
 ]
 
 export function Venue() {
   return (
-    <section id="venue" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-24 sm:px-8">
+    <section id="venue" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8">
       <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-gold">Площадка</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-neon-pink">Площадка</p>
           <h2 className="mt-3 font-display text-5xl tracking-tight text-foreground sm:text-6xl">
             {EVENT.venueName}
           </h2>
         </div>
         <p className="max-w-md text-pretty leading-relaxed text-muted-foreground">
-          Просторный лофт с верандой под открытым небом, высокими потолками и
-          панорамными окнами. Камерная атмосфера и звук, настроенный под каждый сет.
+          GONCHAR — это двухуровневый лофт с барной зоной, сценой и летней верандой.
+          Камерная атмосфера, мощный звук и пространство, созданное для танцев до утра.
         </p>
       </div>
 
@@ -42,7 +42,7 @@ export function Venue() {
       </div>
 
       <div className="mt-8 flex items-center gap-3 rounded-2xl border border-border bg-card/60 px-6 py-5">
-        <MapPin className="h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
+        <MapPin className="h-5 w-5 shrink-0 text-neon-pink" aria-hidden="true" />
         <div>
           <p className="text-sm font-medium text-foreground">{EVENT.venueName}</p>
           <p className="text-sm text-muted-foreground">{EVENT.address}</p>
