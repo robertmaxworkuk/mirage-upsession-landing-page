@@ -74,7 +74,7 @@ export function Venue() {
 
         <div className="lg:col-span-2 overflow-hidden rounded-2xl border border-border bg-card/60 h-[350px] relative">
           <iframe
-            src="https://yandex.ru/map-widget/v1/?ll=37.622638%2C55.708848&z=16&pt=37.622638%2C55.708848%2Cpm2rdm"
+            src="https://yandex.ru/map-widget/v1/org/ryabov_loft/237785254493/?ll=37.628625%2C55.708739&z=16"
             width="100%"
             height="100%"
             style={{ border: 0, filter: "invert(0.9) hue-rotate(180deg) brightness(0.9) contrast(1.1)" }}
