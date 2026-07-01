@@ -28,10 +28,10 @@ export type Artist = {
 }
 
 export const LINEUP: Artist[] = [
-  { name: "Remoz", initials: "RM", role: "DJ Set", image: "/artist_remoz.png" },
-  { name: "Morpheu", initials: "MP", role: "DJ Set", image: "/artist_morpheu.png" },
-  { name: "SUVsum", initials: "SV", role: "DJ Set", image: "/artist_suvsum.png" },
-  { name: "Dan Rich", initials: "DR", role: "Special Guest", image: "/artist_dan_rich.png" },
+  { name: "Remoz", initials: "RM", role: "Диджей", image: "/artist_remoz.png" },
+  { name: "Morpheu", initials: "MP", role: "Диджей", image: "/artist_morpheu.png" },
+  { name: "SUVsum", initials: "SV", role: "Диджей", image: "/artist_suvsum.png" },
+  { name: "Dan Rich", initials: "DR", role: "Диджей", image: "/artist_dan_rich.png" },
 ]
 
 export type Tier = {
@@ -63,8 +63,8 @@ export const TIERS: Tier[] = [
   },
   {
     name: "VIP",
-    price: "3300 ₽",
-    fromPrice: 3300,
+    price: "3500 ₽",
+    fromPrice: 3500,
     cta: "Забрать VIP",
     perks: ["Всё из Standard", "VIP-зона с сидячими местами", "Свой столик"],
     featured: true,
