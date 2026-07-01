@@ -57,7 +57,7 @@ export function Venue() {
       <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="lg:col-span-1 flex flex-col justify-between rounded-2xl border border-border bg-card/60 p-6 backdrop-blur-md">
           <div>
-            <h3 className="font-display text-2xl tracking-wide text-foreground">Как нас найти</h3>
+            <h3 className="font-heading text-xl sm:text-2xl tracking-tight text-foreground">Как нас найти</h3>
             <p className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground/90">
               Легендарный клуб GONCHAR — это двухуровневый лофт с барной зоной, сценой и просторной летней верандой. Камерная атмосфера, мощный звук и пространство, созданное для танцев до утра. Находится всего в 5 минутах пешком от метро Тульская.
             </p>

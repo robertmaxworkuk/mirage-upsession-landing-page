@@ -13,7 +13,7 @@ export function DressCode() {
           {/* Subtle accent glow */}
           <div className="absolute -inset-10 -z-10 bg-radial-gradient from-neon-pink/5 via-transparent to-transparent opacity-60 pointer-events-none" />
           
-          <h2 className="font-display text-5xl tracking-tight text-foreground sm:text-6xl mb-6">
+          <h2 className="font-heading text-4xl tracking-tight text-foreground sm:text-5xl mb-6">
             Пляжный вайб
           </h2>
           

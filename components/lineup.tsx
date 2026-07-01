@@ -22,7 +22,7 @@ export function Lineup() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="mb-16 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-neon-pink">Line-up</p>
-          <h2 className="mt-3 font-display text-5xl tracking-tight text-foreground sm:text-6xl">
+          <h2 className="mt-3 font-heading text-4xl tracking-tight text-foreground sm:text-5xl">
             Кто играет
           </h2>
         </div>

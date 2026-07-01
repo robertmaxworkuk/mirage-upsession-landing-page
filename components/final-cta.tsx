@@ -14,7 +14,7 @@ export function FinalCta() {
         {/* Background Veranda Photo inside the card wrapper */}
         <div className="absolute inset-0 -z-30 overflow-hidden pointer-events-none">
           <Image
-            src="\venue-crowd.png"
+            src="/venue-crowd.png"
             alt="Панорамный вид на летнюю веранду клуба GONCHAR"
             fill
             sizes="(max-width: 1024px) 100vw, 80vw"
@@ -33,7 +33,7 @@ export function FinalCta() {
             Увидимся на вечеринке
           </p>
 
-          <h2 className="font-display text-5xl leading-[1.0] tracking-tight text-balance text-foreground sm:text-7xl group-hover:text-neon-coral transition-colors duration-300">
+          <h2 className="font-heading text-4xl leading-[1.1] tracking-tight text-balance text-foreground sm:text-6xl group-hover:text-neon-coral transition-colors duration-300">
             Сессия закончилась.
             <br />
             <span className="text-brand-gradient">Лето начинается ночью</span>

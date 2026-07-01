@@ -58,7 +58,7 @@ export function Hero() {
           <Countdown target={EVENT_DATE} />
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-8">
           <Button
             render={
               <a href={TICKET_URL} target="_blank" rel="noopener noreferrer">
@@ -67,12 +67,6 @@ export function Hero() {
             }
             size="lg"
             className="cta-glow rounded-full bg-brand-gradient px-8 font-medium uppercase tracking-wider text-primary-foreground hover:opacity-90 cta-pulse"
-          />
-          <Button
-            render={<a href="#lineup">Смотреть лайн-ап</a>}
-            size="lg"
-            variant="outline"
-            className="rounded-full border-border bg-transparent px-8 font-medium uppercase tracking-wider text-foreground hover:bg-card shimmer-sweep"
           />
         </div>
       </div>

@@ -1,13 +1,20 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, Bebas_Neue } from 'next/font/google'
+import { Geist_Mono, Unbounded, Manrope, Bebas_Neue } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
+const manrope = Manrope({
+  variable: '--font-manrope',
+  subsets: ['latin', 'cyrillic'],
+})
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+})
+const unbounded = Unbounded({
+  variable: '--font-unbounded',
+  subsets: ['latin', 'cyrillic'],
 })
 const bebasNeue = Bebas_Neue({
   variable: '--font-bebas',
@@ -44,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} bg-background`}
+      className={`${manrope.variable} ${geistMono.variable} ${unbounded.variable} ${bebasNeue.variable} bg-background`}
     >
       <body className="font-sans antialiased relative min-h-screen">
         <div className="pointer-events-none fixed inset-0 z-50 bg-grain" />

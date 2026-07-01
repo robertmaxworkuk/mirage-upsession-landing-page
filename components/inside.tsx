@@ -99,7 +99,7 @@ export function Inside() {
               Что будет внутри
             </p>
             
-            <h2 className="mt-4 font-display text-6xl leading-[0.9] tracking-tight text-foreground sm:text-7xl md:text-8xl select-none">
+            <h2 className="mt-4 font-heading text-4xl leading-[1.0] tracking-tight text-foreground sm:text-6xl md:text-7xl select-none">
               Лето
               <br />
               начинается
@@ -170,7 +170,7 @@ export function Inside() {
                           {getIcon(i)}
                         </div>
                         
-                        <h3 className="font-display text-2xl tracking-wide text-foreground group-hover:text-neon-coral transition-colors duration-300">
+                        <h3 className="font-sans text-xl font-bold tracking-tight text-foreground group-hover:text-neon-coral transition-colors duration-300">
                           {item.title}
                         </h3>
                       </div>
