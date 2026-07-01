@@ -11,7 +11,7 @@ export function Tickets() {
         <div className="mb-12 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-neon-pink">Билеты</p>
           <h2 className="mt-3 font-heading text-4xl tracking-tight text-foreground sm:text-5xl">
-            Выбери свой вход
+            Выбери свой <span className="text-brand-gradient">вход</span>
           </h2>
           <p className="mx-auto mt-4 max-w-md text-pretty leading-relaxed text-muted-foreground">
             Скидка действует до воскресенья включительно. Дальше — стандартная стоимость.

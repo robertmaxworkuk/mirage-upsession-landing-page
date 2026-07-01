@@ -90,7 +90,7 @@ export function Teaser() {
           <p className="text-xs uppercase tracking-[0.4em] text-neon-pink font-semibold">Teaser</p>
           <h2 className="mt-3 font-heading text-4xl tracking-tight text-foreground sm:text-5xl leading-none md:leading-[1.1]">
             Почувствуй
-            <br className="hidden md:inline" /> вайб
+            <br className="hidden md:inline" /> <span className="text-cool-gradient">вайб</span>
           </h2>
           <p className="mt-4 text-pretty text-sm leading-relaxed text-muted-foreground/80 font-medium">
             Посмотри, как проходит Mirage UpSession, и готовься к главной пляжной вечеринке этого лета.
