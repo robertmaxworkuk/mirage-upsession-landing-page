@@ -3,7 +3,7 @@ import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { TIERS, TICKET_URL } from "@/lib/event"
 
-export function Tickets() {
+export function Tickets({ promo }: { promo?: boolean }) {
   return (
     <section id="tickets" className="relative scroll-mt-24 px-5 py-24 sm:px-8 overflow-hidden">
 
@@ -16,6 +16,11 @@ export function Tickets() {
           <p className="mx-auto mt-4 max-w-md text-pretty leading-relaxed text-muted-foreground">
             Скидка действует до воскресенья включительно. Дальше — стандартная стоимость.
           </p>
+          {promo && (
+            <div className="mt-6 mx-auto inline-block rounded-full border border-neon-pink/20 bg-neon-pink/5 px-5 py-2 text-xs font-semibold tracking-wide text-neon-pink shadow-[0_0_15px_rgba(236,72,153,0.06)] select-none animate-fade-in">
+              *Цены указаны с учетом промокода <span className="font-mono bg-neon-pink/15 px-1.5 py-0.5 rounded text-foreground font-black">ANR85</span>
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -23,6 +28,8 @@ export function Tickets() {
           const isVip = tier.name === "VIP"
           const isSquad = tier.name === "Squad 3+1"
           const buttonLabel = isSquad ? "Купить Squad" : tier.cta
+          const basePrice = tier.fromPrice
+          const discountedPrice = promo ? Math.round(basePrice * 0.9) : basePrice
 
           return (
             <div
@@ -52,8 +59,15 @@ export function Tickets() {
                 )}
               </div>
 
-              <div className="mt-3 flex items-baseline gap-2 relative z-10">
-                <span className="font-display text-4xl text-brand-gradient">{tier.price}</span>
+              <div className="mt-3 flex flex-col justify-end min-h-[56px] relative z-10">
+                {promo ? (
+                  <div className="flex flex-col justify-end">
+                    <span className="text-xs line-through text-muted-foreground/50 leading-tight mb-0.5">{tier.price}</span>
+                    <span className="font-display text-4xl text-brand-gradient leading-none">{discountedPrice} ₽*</span>
+                  </div>
+                ) : (
+                  <span className="font-display text-4xl text-brand-gradient leading-none">{tier.price}</span>
+                )}
               </div>
 
               {/* Perks list */}
@@ -78,6 +92,11 @@ export function Tickets() {
                     : "bg-secondary text-secondary-foreground hover:bg-secondary/90"
                 }`}
               />
+              {promo && (
+                <div className="mt-2 text-center text-[10px] text-neon-pink font-semibold uppercase tracking-widest select-none relative z-10 animate-fade-in">
+                  Код ANR85 применен
+                </div>
+              )}
             </div>
           )
         })}

@@ -4,8 +4,9 @@ import React, { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { TICKET_URL, TIERS } from "@/lib/event"
 
-export function MobileCta() {
+export function MobileCta({ promo }: { promo?: boolean }) {
   const minPrice = Math.min(...TIERS.map((t) => t.fromPrice))
+  const discountedMinPrice = Math.round(minPrice * 0.9)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -32,9 +33,13 @@ export function MobileCta() {
       }`}
     >
       <div className="flex items-center justify-between gap-4">
-        <div className="leading-tight">
-          <p className="text-[11px] uppercase tracking-widest text-muted-foreground">Билеты</p>
-          <p className="font-display text-xl text-foreground">от {minPrice} ₽</p>
+        <div className="leading-tight select-none">
+          <p className="text-[11px] uppercase tracking-widest text-muted-foreground">
+            {promo ? "С промокодом ANR85" : "Билеты"}
+          </p>
+          <p className="font-display text-xl text-foreground">
+            от {promo ? discountedMinPrice : minPrice} ₽{promo ? "*" : ""}
+          </p>
         </div>
         <Button
           render={

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Countdown } from "@/components/countdown"
 import { EVENT, EVENT_DATE, TICKET_URL } from "@/lib/event"
 
-export function Hero() {
+export function Hero({ promo }: { promo?: boolean }) {
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5 pb-10 pt-22 text-center sm:px-8">
       <Image

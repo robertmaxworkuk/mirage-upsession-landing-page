@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { TICKET_URL } from "@/lib/event"
 
-export function FinalCta() {
+export function FinalCta({ promo }: { promo?: boolean }) {
   return (
     <section className="relative overflow-hidden px-5 py-24 sm:px-8">
       {/* Decorative background grid matrix */}
@@ -39,18 +39,31 @@ export function FinalCta() {
             <span className="text-brand-gradient">Лето начинается ночью</span>
           </h2>
 
-          <Button
-            render={
-              <a href={TICKET_URL} target="_blank" rel="noopener noreferrer">
-                Купить билет
-              </a>
-            }
-            size="lg"
-            className="cta-glow mt-10 rounded-full bg-brand-gradient px-12 py-6 font-semibold uppercase tracking-wider text-primary-foreground hover:opacity-95 cta-pulse text-sm"
-          />
+          <div className="mt-10 flex flex-col items-center">
+            <Button
+              render={
+                <a href={TICKET_URL} target="_blank" rel="noopener noreferrer">
+                  Купить билет
+                </a>
+              }
+              size="lg"
+              className="cta-glow rounded-full bg-brand-gradient px-12 py-6 font-semibold uppercase tracking-wider text-primary-foreground hover:opacity-95 cta-pulse text-sm"
+            />
+            {promo && (
+              <p className="mt-3 text-[11px] text-neon-pink font-bold uppercase tracking-[0.25em] select-none animate-fade-in">
+                Промокод ANR85 активен (-10%)
+              </p>
+            )}
+          </div>
 
-          <p className="mt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground/80 font-medium">
-            Билеты от 1700 ₽
+          <p className="mt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground/80 font-medium select-none">
+            {promo ? (
+              <>
+                Билеты от <span className="text-neon-pink font-bold">1530 ₽*</span> по промокоду <span className="font-mono bg-white/10 px-1.5 py-0.5 rounded text-foreground font-black">ANR85</span>
+              </>
+            ) : (
+              "Билеты от 1700 ₽"
+            )}
           </p>
         </div>
       </div>

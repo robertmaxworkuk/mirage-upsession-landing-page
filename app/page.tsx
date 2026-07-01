@@ -11,23 +11,30 @@ import { SiteFooter } from "@/components/site-footer"
 import { MobileCta } from "@/components/mobile-cta"
 import { NeonPageBg } from "@/components/ui/neon-page-bg"
 
-export default function Page() {
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
+export default async function Page(props: {
+  searchParams: SearchParams
+}) {
+  const searchParams = await props.searchParams
+  const promo = searchParams.promo === "true"
+
   return (
     <>
-      <SiteHeader />
+      <SiteHeader promo={promo} />
       <main className="relative overflow-hidden bg-[#050006] isolate">
         <NeonPageBg />
-        <Hero />
+        <Hero promo={promo} />
         <Teaser />
         <Inside />
         <Venue />
-        <Tickets />
+        <Tickets promo={promo} />
         <DressCode />
         <Faq />
-        <FinalCta />
+        <FinalCta promo={promo} />
       </main>
       <SiteFooter />
-      <MobileCta />
+      <MobileCta promo={promo} />
     </>
   )
 }
