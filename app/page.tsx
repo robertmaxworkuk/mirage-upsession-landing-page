@@ -17,24 +17,30 @@ export default async function Page(props: {
   searchParams: SearchParams
 }) {
   const searchParams = await props.searchParams
-  const promo = searchParams.promo === "true"
+  const promoParam = searchParams.promo
+  const promoCode =
+    promoParam === "true"
+      ? "ANR85"
+      : typeof promoParam === "string" && promoParam.trim() !== "" && promoParam !== "false"
+        ? promoParam
+        : undefined
 
   return (
     <>
-      <SiteHeader promo={promo} />
+      <SiteHeader promoCode={promoCode} />
       <main className="relative overflow-hidden bg-[#050006] isolate">
         <NeonPageBg />
-        <Hero promo={promo} />
+        <Hero />
         <Teaser />
         <Inside />
         <Venue />
-        <Tickets promo={promo} />
+        <Tickets promoCode={promoCode} />
         <DressCode />
         <Faq />
-        <FinalCta promo={promo} />
+        <FinalCta promoCode={promoCode} />
       </main>
       <SiteFooter />
-      <MobileCta promo={promo} />
+      <MobileCta promoCode={promoCode} />
     </>
   )
 }

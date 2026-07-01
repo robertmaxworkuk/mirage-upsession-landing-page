@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { TICKET_URL } from "@/lib/event"
 
-export function FinalCta({ promo }: { promo?: boolean }) {
+export function FinalCta({ promoCode }: { promoCode?: string }) {
   return (
     <section className="relative overflow-hidden px-5 py-24 sm:px-8">
       {/* Decorative background grid matrix */}
@@ -49,17 +49,17 @@ export function FinalCta({ promo }: { promo?: boolean }) {
               size="lg"
               className="cta-glow rounded-full bg-brand-gradient px-12 py-6 font-semibold uppercase tracking-wider text-primary-foreground hover:opacity-95 cta-pulse text-sm"
             />
-            {promo && (
+            {promoCode && (
               <p className="mt-3 text-[11px] text-neon-pink font-bold uppercase tracking-[0.25em] select-none animate-fade-in">
-                Промокод ANR85 активен (-10%)
+                Промокод {promoCode} активен (-10%)
               </p>
             )}
           </div>
 
           <p className="mt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground/80 font-medium select-none">
-            {promo ? (
+            {promoCode ? (
               <>
-                Билеты от <span className="text-neon-pink font-bold">1530 ₽*</span> по промокоду <span className="font-mono bg-white/10 px-1.5 py-0.5 rounded text-foreground font-black">ANR85</span>
+                Билеты от <span className="text-neon-pink font-bold">1530 ₽*</span> по промокоду <span className="font-mono bg-white/10 px-1.5 py-0.5 rounded text-foreground font-black">{promoCode}</span>
               </>
             ) : (
               "Билеты от 1700 ₽"

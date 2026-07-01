@@ -11,7 +11,7 @@ const NAV = [
   { label: "FAQ", href: "#faq" },
 ]
 
-export function SiteHeader({ promo }: { promo?: boolean }) {
+export function SiteHeader({ promoCode }: { promoCode?: string }) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -23,9 +23,9 @@ export function SiteHeader({ promo }: { promo?: boolean }) {
 
   return (
     <div className="fixed inset-x-0 top-0 z-50 flex flex-col">
-      {promo && (
+      {promoCode && (
         <div className="bg-brand-gradient text-primary-foreground py-2 px-4 text-center text-xs font-semibold tracking-wider uppercase shadow-md select-none">
-          Промокод <span className="font-mono bg-white/20 px-1.5 py-0.5 rounded text-sm font-black tracking-widest">ANR85</span> — скидка 10% на всё
+          Промокод <span className="font-mono bg-white/20 px-1.5 py-0.5 rounded text-sm font-black tracking-widest">{promoCode}</span> — скидка 10% на всё
         </div>
       )}
       <header
