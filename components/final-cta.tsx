@@ -39,27 +39,20 @@ export function FinalCta({ promoCode }: { promoCode?: string }) {
             <span className="text-brand-gradient">Лето начинается ночью</span>
           </h2>
 
-          <div className="mt-10 flex flex-col items-center">
-            <Button
-              render={
-                <a href={TICKET_URL} target="_blank" rel="noopener noreferrer">
-                  Купить билет
-                </a>
-              }
-              size="lg"
-              className="cta-glow rounded-full bg-brand-gradient px-12 py-6 font-semibold uppercase tracking-wider text-primary-foreground hover:opacity-95 cta-pulse text-sm"
-            />
-            {promoCode && (
-              <p className="mt-3 text-[11px] text-neon-pink font-bold uppercase tracking-[0.25em] select-none animate-fade-in">
-                Промокод {promoCode} активен (-10%)
-              </p>
-            )}
-          </div>
+          <Button
+            render={
+              <a href={TICKET_URL} target="_blank" rel="noopener noreferrer">
+                Купить билет
+              </a>
+            }
+            size="lg"
+            className="cta-glow mt-10 rounded-full bg-brand-gradient px-12 py-6 font-semibold uppercase tracking-wider text-primary-foreground hover:opacity-95 cta-pulse text-sm"
+          />
 
           <p className="mt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground/80 font-medium select-none">
             {promoCode ? (
               <>
-                Билеты от <span className="text-neon-pink font-bold">1530 ₽*</span> по промокоду <span className="font-mono bg-white/10 px-1.5 py-0.5 rounded text-foreground font-black">{promoCode}</span>
+                Билеты от <span className="text-neon-pink font-bold">1530 ₽</span> по промокоду <span className="font-mono bg-white/10 px-1.5 py-0.5 rounded text-foreground font-black">{promoCode}</span>
               </>
             ) : (
               "Билеты от 1700 ₽"

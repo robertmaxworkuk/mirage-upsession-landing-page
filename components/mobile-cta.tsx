@@ -38,7 +38,7 @@ export function MobileCta({ promoCode }: { promoCode?: string }) {
             {promoCode ? `С промокодом ${promoCode}` : "Билеты"}
           </p>
           <p className="font-display text-xl text-foreground">
-            от {promoCode ? discountedMinPrice : minPrice} ₽{promoCode ? "*" : ""}
+            от {promoCode ? discountedMinPrice : minPrice} ₽
           </p>
         </div>
         <Button
