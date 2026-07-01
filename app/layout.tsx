@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono, Bebas_Neue } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -49,7 +50,9 @@ export default function RootLayout({
         <div className="pointer-events-none fixed inset-0 z-50 bg-grain" />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        <Script src="https://cdn.qtickets.tech/openapi.js" strategy="afterInteractive" />
       </body>
     </html>
   )
 }
+

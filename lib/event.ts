@@ -3,7 +3,7 @@
 // Party: 9 July 2026, 22:00 Moscow time -> 19:00 UTC
 export const EVENT_DATE = Date.UTC(2026, 6, 9, 19, 0, 0)
 
-export const TICKET_URL = "https://moscow.qtickets.events/241548-summer-mirage"
+export const TICKET_URL = "https://qtickets.ru/event/241548?base_color=940000"
 
 export const EVENT = {
   name: "Mirage UpSession",
